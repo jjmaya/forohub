@@ -1,6 +1,6 @@
 package com.ingjuanmaya.forohub.domain.topicos;
 
-public enum statusTopico {
+public enum StatusTopico {
     ABIERTO,
     CERRADO
 

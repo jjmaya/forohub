@@ -16,8 +16,6 @@ public record RegistrarTopico(
         @NotNull Long idCurso,
         @NotNull Long idUsuario
 ) {
-    private static final Object StatusTopico = "ABIERTO" ;
-
     public Topico convert(CursoRepository cursoRepository, UsuarioRepository usuarioRepository) {
         Usuario usuario = usuarioRepository.findById(idUsuario)
                 .orElseThrow(() -> new RuntimeException("Usuario no encontrado"));

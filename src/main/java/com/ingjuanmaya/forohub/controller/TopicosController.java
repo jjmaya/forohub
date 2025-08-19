@@ -1,11 +1,7 @@
 package com.ingjuanmaya.forohub.controller;
 
 import com.ingjuanmaya.forohub.domain.cursos.Curso.CursoRepository;
-import com.ingjuanmaya.forohub.domain.topicos.ActualizarTopico;
-import com.ingjuanmaya.forohub.domain.topicos.RegistrarTopico;
-import com.ingjuanmaya.forohub.domain.topicos.Topico;
-import com.ingjuanmaya.forohub.domain.topicos.TopicoDTO;
-import com.ingjuanmaya.forohub.domain.topicos.TopicoRepositoy;
+import com.ingjuanmaya.forohub.domain.topicos.*;
 import com.ingjuanmaya.forohub.domain.usuarios.UsuarioRepository;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
@@ -44,7 +40,7 @@ public class TopicosController {
         if (nombreCurso == null) {
             topicos = topicoRepositoy.findAll(paginacion);
         } else {
-            topicos = topicoRepositoy.findByCurso_Nombre(nombreCurso, paginacion);
+            topicos = topicoRepositoy.findByNombreCurso(nombreCurso, paginacion);
         }
         return TopicoDTO.convert(topicos);
     }
